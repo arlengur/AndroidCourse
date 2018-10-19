@@ -1,10 +1,13 @@
 package ru.arlen.lesson3.ingredient;
 
+/**
+ * Абстрактный сыр
+ *
+ * @author galin-an
+ */
 public abstract class Cheese {
-    String name;
-
     @Override
     public String toString() {
-        return name + " cheese";
+        return getClass().getSimpleName();
     }
 }

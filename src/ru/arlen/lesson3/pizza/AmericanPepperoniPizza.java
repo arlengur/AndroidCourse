@@ -4,13 +4,14 @@ import ru.arlen.lesson3.ingredient.CheeseReggiano;
 import ru.arlen.lesson3.ingredient.SauceMarinara;
 import ru.arlen.lesson3.ingredient.DoughThin;
 
+/**
+ * Американская пицца с пепперони
+ *
+ * @author galin-an
+ */
 public class AmericanPepperoniPizza extends Pizza {
     public AmericanPepperoniPizza() {
-        name = "American Pepperoni Pizza";
-        dough = new DoughThin();
-        sauce = new SauceMarinara();
-        cheese =  new CheeseReggiano();
-        veggies = new String[]{"Mushroom", "Pepperoni"};
+        super("American Pepperoni Pizza", new DoughThin(), new SauceMarinara(), new CheeseReggiano(), new String[]{"Mushroom", "Pepperoni"});
     }
 
     @Override

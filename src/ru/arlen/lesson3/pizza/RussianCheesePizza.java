@@ -4,16 +4,15 @@ import ru.arlen.lesson3.ingredient.CheeseParmesan;
 import ru.arlen.lesson3.ingredient.DoughThick;
 import ru.arlen.lesson3.ingredient.SauceTomato;
 
-import java.sql.SQLOutput;
-
+/**
+ * Русская пицца с сыром
+ *
+ * @author galin-an
+ */
 public class RussianCheesePizza extends Pizza {
 
     public RussianCheesePizza() {
-        name = "Russian Cheese Pizza";
-        dough = new DoughThick();
-        sauce = new SauceTomato();
-        cheese =  new CheeseParmesan();
-        veggies = new String[]{"Garlic", "Cheese"};
+        super("Russian Cheese Pizza", new DoughThick(), new SauceTomato(), new CheeseParmesan(), new String[]{"Garlic", "Cheese"});
     }
 
     @Override

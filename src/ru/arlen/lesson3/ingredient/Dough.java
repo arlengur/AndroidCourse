@@ -1,10 +1,13 @@
 package ru.arlen.lesson3.ingredient;
 
+/**
+ * Абстрактное тесто
+ *
+ * @author galin-an
+ */
 public abstract class Dough {
-    String name;
-
     @Override
     public String toString() {
-        return name + " dough";
+        return getClass().getSimpleName();
     }
 }

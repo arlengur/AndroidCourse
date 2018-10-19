@@ -1,10 +1,13 @@
 package ru.arlen.lesson3.ingredient;
 
+/**
+ * Абстрактный соус
+ *
+ * @author galin-an
+ */
 public abstract class Sauce {
-    String name;
-
     @Override
     public String toString() {
-        return name + " sauce";
+        return getClass().getSimpleName();
     }
 }

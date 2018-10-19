@@ -2,8 +2,13 @@ package ru.arlen.lesson3.pizzastore;
 
 import ru.arlen.lesson3.pizza.Pizza;
 
+/**
+ * Завод по производству пиццы
+ *
+ * @author galin-an
+ */
 public abstract class PizzaStore {
-    public Pizza orderPizza(String type) {
+    public final Pizza orderPizza(PizzaType type) {
         Pizza pizza;
         pizza = createPizza(type);
         pizza.prepare();
@@ -14,5 +19,5 @@ public abstract class PizzaStore {
         return pizza;
     }
 
-    protected abstract Pizza createPizza(String type);
+    protected abstract Pizza createPizza(PizzaType type);
 }

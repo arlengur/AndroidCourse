@@ -4,13 +4,14 @@ import ru.arlen.lesson3.ingredient.CheeseParmesan;
 import ru.arlen.lesson3.ingredient.DoughThick;
 import ru.arlen.lesson3.ingredient.SauceTomato;
 
+/**
+ * Русская пицца с пепперони
+ *
+ * @author galin-an
+ */
 public class RussianPepperoniPizza extends Pizza {
     public RussianPepperoniPizza() {
-        name = "Russian Pepperoni Pizza";
-        dough = new DoughThick();
-        sauce = new SauceTomato();
-        cheese =  new CheeseParmesan();
-        veggies = new String[]{"Garlic", "Pepperoni"};
+        super("Russian Pepperoni Pizza", new DoughThick(), new SauceTomato(), new CheeseParmesan(), new String[]{"Garlic", "Pepperoni"});
     }
 
     @Override

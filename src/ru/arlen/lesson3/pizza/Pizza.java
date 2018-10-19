@@ -4,14 +4,27 @@ import ru.arlen.lesson3.ingredient.Cheese;
 import ru.arlen.lesson3.ingredient.Dough;
 import ru.arlen.lesson3.ingredient.Sauce;
 
+/**
+ * Абстрактный класс пиццы
+ *
+ * @author galin-an
+ */
 public abstract class Pizza {
-    String name;
-    Dough dough;
-    Sauce sauce;
-    Cheese cheese;
-    String[] veggies;
+    private final String name;
+    private final Dough dough;
+    private final Sauce sauce;
+    private final Cheese cheese;
+    private final String[] veggies;
 
-    public void prepare() {
+    public Pizza(String name, Dough dough, Sauce sauce, Cheese cheese, String[] veggies) {
+        this.name = name;
+        this.dough = dough;
+        this.sauce = sauce;
+        this.cheese = cheese;
+        this.veggies = veggies;
+    }
+
+    public final void prepare() {
         System.out.println("Preparing " + name);
         System.out.println("Tossing: " + dough);
         System.out.println("Adding: " + sauce);
@@ -35,11 +48,4 @@ public abstract class Pizza {
         System.out.println("Place pizza in official box");
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

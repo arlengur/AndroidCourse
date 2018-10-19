@@ -4,13 +4,21 @@ import ru.arlen.lesson3.pizza.AmericanCheesePizza;
 import ru.arlen.lesson3.pizza.AmericanPepperoniPizza;
 import ru.arlen.lesson3.pizza.Pizza;
 
+import static ru.arlen.lesson3.pizzastore.PizzaType.cheese;
+import static ru.arlen.lesson3.pizzastore.PizzaType.pepperoni;
+
+/**
+ * Франшиза Америки на пиццу
+ *
+ * @author galin-an
+ */
 public class AmericanPizzaStore extends PizzaStore {
     @Override
-    protected Pizza createPizza(String type) {
-        if (type.equals("cheese")) {
+    protected Pizza createPizza(PizzaType type) {
+        if (type.equals(cheese)) {
             return new AmericanCheesePizza();
         }
-        if (type.equals("pepperoni")) {
+        if (type.equals(pepperoni)) {
             return new AmericanPepperoniPizza();
         } else return null;
     }
