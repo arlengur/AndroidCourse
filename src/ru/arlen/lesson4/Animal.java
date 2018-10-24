@@ -1,7 +1,8 @@
 package ru.arlen.lesson4;
 
-import static ru.arlen.lesson4.State.awake;
-import static ru.arlen.lesson4.State.sleep;
+import static ru.arlen.lesson4.State.AWAKEN;
+import static ru.arlen.lesson4.State.DEAD;
+import static ru.arlen.lesson4.State.SLEEPING;
 
 /**
  * Базовый класс для животного.
@@ -19,7 +20,7 @@ public abstract class Animal {
      */
     public Animal(String name) {
         this.name = name;
-        this.state = awake;
+        this.state = AWAKEN;
     }
 
     /**
@@ -35,31 +36,32 @@ public abstract class Animal {
      * Животное спит
      */
     public final void sleep() {
-        state = sleep;
+        state = SLEEPING;
     }
 
     /**
      * Животное проснулось
      */
     public final void awake() {
-        if (state != null)
-            state = awake;
+        if (state != DEAD)
+            state = AWAKEN;
     }
 
     /**
      * Животное умирает
      */
     public final void die() {
-        state = null;
+        state = DEAD;
     }
 
     /**
      * Издать звук. Животное издаёт звуки если не спит и не умерло.
      */
-    public final void talk() {
-        if (state == awake) {
-            System.out.println(getTalk());
+    public final String talk() {
+        if (state == AWAKEN) {
+            return getTalk();
         }
+        return "";
     }
 
     protected abstract String getTalk();
@@ -90,7 +92,7 @@ public abstract class Animal {
 
         Animal animal = (Animal) o;
 
-        if (state != animal.state && (state == null || animal.state == null)) return false;
+        if (state != animal.state && (state == DEAD || animal.state == DEAD)) return false;
         // Пропускаем sleeping, считаем спящее животное тем же самым
 
         return name != null ? name.equals(animal.name) : animal.name == null;
@@ -99,7 +101,7 @@ public abstract class Animal {
     @Override
     public int hashCode() {
         int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (state == null ? 1 : 0);
+        result = 31 * result + (state == DEAD ? 1 : 0);
         // В хэшкоде тоже пропускаем спячку
         return result;
     }

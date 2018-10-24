@@ -6,5 +6,5 @@ package ru.arlen.lesson4;
  * @author galin-an
  */
 public enum State {
-    sleep, awake
+    SLEEPING, AWAKEN, DEAD
 }

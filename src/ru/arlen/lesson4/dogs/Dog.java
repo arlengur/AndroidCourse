@@ -1,12 +1,14 @@
 package ru.arlen.lesson4.dogs;
 
 import ru.arlen.lesson4.Animal;
+import ru.arlen.lesson4.Domesticated;
 
 /**
  * Вид животного - собака
  *
  * @author galin-an
  */
+@Domesticated
 public abstract class Dog extends Animal {
     /**
      * Конструктор для потомков, принимающий имя пса.
