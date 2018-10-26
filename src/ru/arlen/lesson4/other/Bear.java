@@ -1,7 +1,9 @@
 package ru.arlen.lesson4.other;
 
 import ru.arlen.lesson4.Animal;
+import ru.arlen.lesson4.Domesticated;
 
+@Domesticated("дикий")
 public class Bear extends Animal {
     /**
      * Конструктор для потомков, принимающий имя животного.

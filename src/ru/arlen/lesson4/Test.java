@@ -35,10 +35,12 @@ public class Test {
         for (Animal animal : animals) {
             StringBuilder output = new StringBuilder();
             Domesticated[] annotations = animal.getClass().getAnnotationsByType(Domesticated.class);
-            String domesticated = annotations.length > 0 ? "домашний" : "дикий";
+            StringBuilder domesticated = new StringBuilder();
+            for (Domesticated annotation : annotations)
+                domesticated.append(annotation.value());
             output.append(animal)
                   .append(" (")
-                  .append(domesticated)
+                  .append(domesticated.toString())
                   .append(") - ")
                   .append(animal.talk());
             System.out.println(output.toString());
