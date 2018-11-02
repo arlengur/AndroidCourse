@@ -11,8 +11,8 @@ import ru.arlen.lesson3.ingredient.SauceTomato;
  */
 public class RussianCheesePizza extends Pizza {
 
-    public RussianCheesePizza() {
-        super("Russian Cheese Pizza", new DoughThick(), new SauceTomato(), new CheeseParmesan(), new String[]{"Garlic", "Cheese"});
+    public RussianCheesePizza(int index) {
+        super("Russian Cheese Pizza " + index, new DoughThick(), new SauceTomato(), new CheeseParmesan(), new String[]{"Garlic", "Cheese"});
     }
 
     @Override

@@ -8,12 +8,7 @@ import ru.arlen.lesson3.ingredient.*;
  * @author galin-an
  */
 public class AmericanCheesePizza extends Pizza {
-    public AmericanCheesePizza() {
-        super("American Cheese Pizza", new DoughThin(), new SauceMarinara(), new CheeseReggiano(),new String[]{"Mushroom", "RedPepper"});
-    }
-
-    @Override
-    public void box() {
-        System.out.println("Place pizza in official American box");
+    public AmericanCheesePizza(int index) {
+        super("American Cheese Pizza " + index, new DoughThin(), new SauceMarinara(), new CheeseReggiano(), new String[]{"Mushroom", "RedPepper"});
     }
 }

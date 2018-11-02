@@ -14,12 +14,12 @@ import static ru.arlen.lesson3.pizzastore.PizzaType.pepperoni;
  */
 public class RussianPizzaStore extends PizzaStore {
     @Override
-    protected Pizza createPizza(PizzaType type) {
+    protected Pizza createPizza(PizzaType type, int index) {
         if (type.equals(cheese)) {
-            return new RussianCheesePizza();
+            return new RussianCheesePizza(index);
         }
         if (type.equals(pepperoni)) {
-            return new RussianPepperoniPizza();
+            return new RussianPepperoniPizza(index);
         } else return null;
     }
 }

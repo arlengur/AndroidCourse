@@ -33,6 +33,11 @@ public abstract class Pizza {
         for (String veggie : veggies) {
             System.out.print(" " + veggie);
         }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println();
     }
 
@@ -42,10 +47,6 @@ public abstract class Pizza {
 
     public void cut() {
         System.out.println("Cutting pizza into diagonal slices");
-    }
-
-    public void box() {
-        System.out.println("Place pizza in official box");
     }
 
 }

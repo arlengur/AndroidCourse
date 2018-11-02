@@ -10,13 +10,7 @@ import ru.arlen.lesson3.ingredient.DoughThin;
  * @author galin-an
  */
 public class AmericanPepperoniPizza extends Pizza {
-    public AmericanPepperoniPizza() {
-        super("American Pepperoni Pizza", new DoughThin(), new SauceMarinara(), new CheeseReggiano(), new String[]{"Mushroom", "Pepperoni"});
+    public AmericanPepperoniPizza(int index) {
+        super("American Pepperoni Pizza " + index, new DoughThin(), new SauceMarinara(), new CheeseReggiano(), new String[]{"Mushroom", "Pepperoni"});
     }
-
-    @Override
-    public void box() {
-        System.out.println("Place pizza in official American box");
-    }
-
 }

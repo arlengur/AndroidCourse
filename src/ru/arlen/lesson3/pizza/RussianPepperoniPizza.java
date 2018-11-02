@@ -10,8 +10,8 @@ import ru.arlen.lesson3.ingredient.SauceTomato;
  * @author galin-an
  */
 public class RussianPepperoniPizza extends Pizza {
-    public RussianPepperoniPizza() {
-        super("Russian Pepperoni Pizza", new DoughThick(), new SauceTomato(), new CheeseParmesan(), new String[]{"Garlic", "Pepperoni"});
+    public RussianPepperoniPizza(int index) {
+        super("Russian Pepperoni Pizza" + index, new DoughThick(), new SauceTomato(), new CheeseParmesan(), new String[]{"Garlic", "Pepperoni"});
     }
 
     @Override
