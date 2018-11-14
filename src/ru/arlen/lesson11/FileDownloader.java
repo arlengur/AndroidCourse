@@ -14,7 +14,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class FileDownloader {
-    public static String PATH = "D:/";
+    private static String PATH = "D:/";
+    private static int THREAD_COUNT = 2;
 
     public static void main(String[] args) {
         String url1 = "https://cdn.journaldev.com/wp-content/uploads/2015/03/apache-httpclient-example-closeablehttpclient.jpg";
@@ -54,7 +55,7 @@ public class FileDownloader {
     }
 
     private static void downloadFiles(String[] urlArray) {
-        ExecutorService executorService = Executors.newCachedThreadPool();
+        ExecutorService executorService = Executors.newFixedThreadPool(THREAD_COUNT);
         CountDownLatch latch = new CountDownLatch(urlArray.length);
 
         for (String url : urlArray) {
@@ -81,6 +82,8 @@ public class FileDownloader {
             System.out.println("DONE!");
         } catch (InterruptedException e) {
             System.out.println("InterruptedException: " + e.getMessage());
+        } finally {
+            executorService.shutdown();
         }
     }
 }
